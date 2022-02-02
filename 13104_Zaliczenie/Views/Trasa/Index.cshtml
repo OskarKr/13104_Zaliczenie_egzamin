@@ -1,0 +1,53 @@
+﻿@model IEnumerable<_13104_Zaliczenie.Models.Trasa>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NazwaTrasy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DlugoscTrasy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LiczbaSpalonychLitrow)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CenaZaLitr)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NazwaTrasy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DlugoscTrasy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LiczbaSpalonychLitrow)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CenaZaLitr)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
